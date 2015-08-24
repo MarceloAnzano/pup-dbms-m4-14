@@ -11,17 +11,22 @@
 
         var thesis_create_api = '/api/thesis'
         $.post(thesis_create_api, t, function(response){
-            if (response.status = 'OK'){
-                $('table tr:first').after('<tr></tr>');
-                $('tr:eq(1)').append('<td class="yr">'+ response.data.year + '</td>');
-                $('tr:eq(1)').append('<td class="yr">'+ response.data.title + '</td>');
-                //$('tr:eq(1)').append('<td class="yr">'+ response.data.abstract + '</td>');
-                //$('tr:eq(1)').append('<td class="yr">'+ response.data.adviser + '</td>');
-                //$('tr:eq(1)').append('<td class="yr">'+ response.data.section + '</td>');
-                $('.form-section').trigger("reset");
+            if(response.data.title != ""){
+                if (response.status = 'OK'){
+                    $('table tr:first').after('<tr></tr>');
+                    $('tr:eq(1)').append('<td class="yr">'+ response.data.year + '</td>');
+                    $('tr:eq(1)').append('<td class="yr">'+ response.data.title + '</td>');
+                    //$('tr:eq(1)').append('<td class="yr">'+ response.data.abstract + '</td>');
+                    //$('tr:eq(1)').append('<td class="yr">'+ response.data.adviser + '</td>');
+                    //$('tr:eq(1)').append('<td class="yr">'+ response.data.section + '</td>');
+                    $('.form-section').trigger("reset");
+                }
+                else {
+                    alert("Can't access database.");
+                }
             }
             else {
-                alert("Can't access database.")
+                alert("Invalid entry!");
             }
         });
         return false;
@@ -44,10 +49,17 @@
     }
     $('.form-section').submit(onFormSubmit)
     loadAllStudents()
+
+
+    
     $('.button').mouseenter(function(){
-        $(this).addClass('hover')
-    })
+        $(this).addClass('shadow');
+      })
     $('.button').mouseleave(function(){
-        $(this).removeClass('hover')
+        $(this).removeClass('shadow');
     })
+
+    $(document).ready(function(){
+        $('.list-section').css('top',($('.form-section').height() + parseInt($('.form-section').css('top').replace('px', '')) +'px'));
+    });
 })(jQuery)
