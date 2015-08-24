@@ -12,8 +12,6 @@ body {
 	width: 100%;
 	position: fixed;
 	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
-	text-align:center;
-	font-size: 30px;
 	color:rgba(251,251,251,1.00);
 	height: 60px;
 	line-height: 60px;
@@ -22,8 +20,26 @@ body {
 	z-index: 12;
 }
 h1{
-	color: #3f51b5;
+	position: fixed;
+	font-size: 30px;
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
 	font-family: inherit;
+	text-align:center;
+}
+h4{
+	position: fixed;
+	font-size: 16px;
+	right: 2%;
+	width: 98%;
+	height: 60px;
+	line-height: 60px;
+	font-family: inherit;
+	text-align: right;
+}
+a{
+	color:rgba(251,251,251,1.00);
 }
 
 .headLine{

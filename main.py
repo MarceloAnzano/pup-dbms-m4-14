@@ -21,32 +21,32 @@ class ThesisDB(ndb.Model):
     adviser = ndb.StringProperty(required=True)
     section = ndb.IntegerProperty(required=True)
     datecreated = ndb.DateTimeProperty(auto_now_add=True)
+    created_by = ndb.TextProperty(required=True)
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         if user is not None:
+            logout_url = users.create_logout_url(self.request.uri)
             template = jinja_env.get_template('index.html')
-            self.response.write(template.render())
+            content = {
+                'user' : user.nickname(),
+                'logout_url': logout_url,
+            }
+            self.response.write(template.render(content))
         else:
             login_url = users.create_login_url(self.request.uri)
             self.redirect(login_url)
-        # Checks for active Google account session
-        
-
-        if user:
-            self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
-            self.response.write('Hello, ' + user.nickname())
-        else:
-            self.redirect(users.create_login_url(self.request.uri))
     
     def post(self):
+        user = users.get_current_user()
         thesis = ThesisDB(
             year=int(self.request.get('year')),
             title=cgi.escape(self.request.get('title')),
             abstract=cgi.escape(self.request.get('abstract')),
             adviser=cgi.escape(self.request.get('adviser')),
             section=int(self.request.get('section')),
+            created_by = user.user_id(),
             )
         thesis.put()
         self.redirect('/api/student')
@@ -75,12 +75,14 @@ class APIThesis(webapp2.RequestHandler):
         self.response.out.write(json.dumps(response))
 
     def post(self):
+        user = users.get_current_user()
         thesis = ThesisDB(
             year=int(self.request.get('year')),
             title=cgi.escape(self.request.get('title')),
             abstract=cgi.escape(self.request.get('abstract')),
             adviser=cgi.escape(self.request.get('adviser')),
             section=int(self.request.get('section')),
+            created_by = user.user_id(),
             )
         thesis.put()
 
