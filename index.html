@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/styles.css">
+    <!--
+    <script type="text/javascript" src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+    -->
+    <script type="text/javascript" src='static/scripts/jquery-2.1.4.min.js'></script>
+</head>
+<body>
+<div class='main'>
+    <div id="heading">
+        <h1>Thesis Database</h1>
+        <h4>Hello, <b>{{user}}</b> - <a href="{{logout_url}}">Logout</a></h4>
+    </div>
+    <center class='form-section'>
+        <div class="headLine">
+            <div class="sectionTitle">Thesis</div>
+            <div class="arrow">></div>
+        </div>
+        <form action="" method="post">
+            <div>
+                <label for="year">Year:</label>
+                <select id="year" name="year">
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                </select>
+            </div>
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title"/>
+            </div>
+            <div>
+                <label for="abstract">Abstract:</label>
+                <textarea id="abstract" name="abstract"></textarea>
+            </div>
+            <div>
+                <label for="adviser">Adviser:</label>
+                <input type="text" id="adviser" name="adviser"/>
+            </div>
+            <div>
+                <label for="section">Section:</label>
+                <select id="section" name="section">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div>
+                <input class="button" type="submit" value="SUBMIT THESIS">
+            </div>
+        </form>
+    </center>
+    <center class='list-section'>
+        <div class="headLine">
+            <div class="sectionTitle">Thesis</div>
+            <div class="arrow">></div>
+        </div>
+        <table>
+            <tr>
+                <td class="head1">Year</td>
+                <td class="head2">Title</td>
+                <!--
+                <td class="head3">Abstract</td>
+                <td class="head4">Adviser</td>
+                <td class="head5">Section</td>
+                -->
+            </tr>
+        </table>
+    </center>
+</div>
+
+
+<script type="text/javascript" src='/static/scripts/script.js'></script>
+</body>
+</html>

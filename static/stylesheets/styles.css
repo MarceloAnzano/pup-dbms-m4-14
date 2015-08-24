@@ -1,0 +1,219 @@
+/*
+@import url(meyerweb.com/eric/tools/css/reset/reset.css);
+*/
+@import url(/static/stylesheets/reset.css);
+body {
+	font-family: Verdana, Helvetica, sans-serif;
+	background-color: #FBFBFB;
+}
+
+#heading {
+	top: 0px;
+	width: 100%;
+	position: fixed;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	text-align:center;
+	font-size: 30px;
+	color:rgba(251,251,251,1.00);
+	height: 60px;
+	line-height: 60px;
+	background-color:rgba(47,134,237,1.00);
+	box-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+	z-index: 12;
+}
+h1{
+	color: #3f51b5;
+	font-family: inherit;
+}
+
+.headLine{
+	position: relative;
+	width: 100%;
+	font-size: 25px;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	text-align:center;
+	background-color: #80D8FF;
+	height: 50px;
+	line-height: 50px;
+	box-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+}
+
+.sectionTitle{
+	position: absolute;
+	width: 100%;
+	color: #fff;
+}
+
+.arrow{
+	position: absolute;
+	text-align:center;
+	right: 10px;
+	font-size: 35px;
+	font-weight: bolder;
+	color: #01579B;
+	-webkit-transform:rotate(50);
+}
+
+.form-section {
+	position: absolute;
+	text-align: left;
+	border-radius: 2px;
+	top: 60px;
+/*
+	background-color: #80D8FF;
+*/
+	width: 100%;
+	box-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+	overflow:hidden;
+}
+
+form{
+	position:relative;
+	top: 10px;
+	margin: 0 auto;
+	width: 70%;
+	padding: 20px 0;
+}
+
+label{
+	font-size:15px;
+	position:absolute;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-size: 18px;
+	text-align:right;
+	line-height:30px;
+	margin-top: 10px;	
+}
+
+input{
+	position:relative;
+	font-size:15px;
+	text-align:center;	
+	position:relative;
+	margin-top: 38px;
+	height: 15px;
+	border-color: transparent transparent #000 transparent ;
+	border-style: dotted;
+	background-color: transparent;
+}
+
+#year, #section{
+	text-align:center;
+	height: 20px;
+	position:relative;
+	margin-top: 15px;
+}
+
+#year{
+	left: 50px;
+}
+#section{
+	left: 70px;
+}
+
+#title, #adviser{
+	left: 0px;
+	width: 100%;
+}
+
+#abstract{
+	font-size:15px;
+	text-align:center;	
+	position:relative;
+	margin-top: 38px;
+	height: 18px;
+	width: 100%;
+	background-color:inherit;
+	border-color: transparent transparent #000 transparent;
+	border-style:dotted;
+	border-width: 2px;
+}
+
+.button {
+	background-color: #40C4FF;
+	position:relative;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-weight:600;
+	text-wrap:suppress;
+	font-size:16px;
+	border: none;
+	width: 100%;
+	height: 50px;
+	transition-duration: 0.2s;
+	color: #fff;
+}
+
+.hover {
+	transition-duration: 0.2s;
+	box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+}
+
+.head1, .head2, .head3, .head4, .head5{
+	position:relative;
+	border-color: transparent transparent #000 transparent;
+	border-style:dotted;
+	border-width:thin;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-size:15px;
+	font-weight:500;
+	height: 20px;
+	line-height: 30px;
+}
+/*
+.head1{
+	width: 34%;
+}
+.head2{
+	width: 19%;
+}
+.head3{
+	width: 19%;
+}
+
+.head4{
+	width: 9%;
+}
+.head5{
+	width: 14%;
+}
+*/
+
+
+td {
+	text-align:center;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-size:15px;
+}
+
+
+
+.list-section{
+	text-align: left;
+	margin: 10px;
+	width: 69%;
+	border-radius: 2px;
+	background-color: #80D8FF;
+	/*width: 500px;*/
+	box-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+}
+
+.tableTitle{
+	height: 30px;
+	line-height: 30px;
+	border-width:thin;
+    font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-weight:600;
+	font-size:16px;
+	width:80%;
+	margin: 0 auto;
+	text-align:center;
+	border-color: transparent transparent #000 transparent ;
+	border-style: dotted;
+}
+
+
+
+::-webkit-input-placeholder{
+	color: rgba(0,0,0,0.5);
+	font: Roboto;
+}
